@@ -1,3 +1,9 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-alert */
+/* eslint-disable no-undef */
+/* eslint-disable no-use-before-define */
 let userName = prompt(
   'Welcome dear Gambler! Enjoy your stay at our Bingo Game! 🎰\n\nThe rules are simple: \nFirst player to complete a Line, shouts "LINE...!!!"\nFirst Player to complete a ticket, shouts "BINGO...!!!"  \n\nTo get started, please enter your name.'
 );
@@ -31,7 +37,9 @@ const Bilbo = new Player("Bilbo Baggins");
 const Sirius = new Player("Sirius Black");
 const Nick = new Player("Nick Burkhardt");
 const Holden = new Player("James Holden");
+// eslint-disable-next-line no-unused-vars
 const user = new Player(userName, 180 - drawCounter * 2);
+// eslint-disable-next-line no-unused-vars
 const playersF = [
   Jimi.name,
   Goofy.name,
@@ -43,26 +51,29 @@ const playersF = [
 ];
 
 const playersOrder = (array) => {
+  // eslint-disable-next-line no-plusplus
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+    // eslint-disable-next-line no-param-reassign
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
 const addCardNumber = () => {
-  let newNumber = {};
+  const newNumber = {};
   newNumber.number = randomNumber();
 };
 const randomNumber = () => {
-  for (let i = 0; cardNumbers.length < 15; i++) {
-    let number = Math.floor(Math.random() * 90) + 1;
+  for (let i = 0; cardNumbers.length < 15; i + 1) {
+    const number = Math.floor(Math.random() * 90) + 1;
     cardNumbers.includes(number) ? randomNumber() : cardNumbers.push(number);
   }
   showCarton();
 };
 
 const drawNumber = () => {
-  let drawnNumber = Math.floor(Math.random() * 90) + 1;
+  const drawnNumber = Math.floor(Math.random() * 90) + 1;
   compareNumberDraws(drawnNumber);
+  // eslint-disable-next-line no-unused-expressions
   drawnNumbers.includes(drawnNumber) ? drawNumber() : drawnNumber;
   switch (drawnNumber) {
     case 1:
@@ -278,7 +289,7 @@ const drawNumber = () => {
       alert(`\nNumber: ${drawnNumber}\n\nThree score and ten `);
       break;
     case 71:
-      alert(`\nNumber: ${drawnNumber}\n\nJ. Lo\’s bum `);
+      alert(`\nNumber: ${drawnNumber}\n\nJ. Lo’s bum `);
       break;
     case 72:
       alert(`\nNumber: ${drawnNumber}\n\nDanny La Rue `);
@@ -344,6 +355,7 @@ const drawNumber = () => {
       );
       break;
   }
+  // eslint-disable-next-line no-plusplus
   drawCounter++;
   drawnNumbers.push(drawnNumber);
   bingoLinesSwitch(drawnNumber);
@@ -478,27 +490,12 @@ const checkPreBingo = (nr) => {
   if (line3.length === 5) {
     bingoLines.push("bLine3");
   }
+  // eslint-disable-next-line no-undef
   checkBingo(nr);
 };
-const checkBingo = (nr) => {
-  if (
-    bingoLines.includes("bLine1") &&
-    bingoLines.includes("bLine2") &&
-    bingoLines.includes("bLine3")
-  ) {
-    alert(
-      `This is what you where waiting for, ${userName}...!  \n\nNumber ${nr} made your BINGO...!!! \n🍀🥂🍾🍀🎉🎰🍀`
-    );
-    console.table(jointArray);
-    getRanking();
-    playersOrder(playersF);
-    endGame();
-  } else {
-    print();
-  }
-};
+
 const compareNumberDraws = (nr) => {
-  for (let i = 0; i < drawnNumbers.length; i++);
+  for (let i = 0; i < drawnNumbers.length; i + 1);
   if (nr === drawnNumbers) {
     drawNumber();
   }
@@ -513,15 +510,13 @@ const endGame = () => {
   playAgain === true ? resetCardNumbers() : leave();
 };
 function showCarton() {
-  cardNumbers.sort(function (a, b) {
-    return a - b;
-  });
+  cardNumbers.sort((a, b) => a - b);
   cardNumbers.join(", ");
   const third = cardNumbers.slice(-5);
   const second = cardNumbers.slice(-10, -5);
   const first = cardNumbers.slice(-15, -10);
   jointArray = [first, second, third];
-  console.table(jointArray);
+
   draw = Boolean(
     confirm(
       `Hello ${userName}...! ✨\n\nHere is your ticket. It comes with 90 goldnuggets to start off with.\nFor every ball drawn, 1 nugget will be discounted. \n\nShould you prefer to change your ticket for another, press cancel. \nOtherwise, press enter to start playing. \n\nGood Luck...! 🍀`
@@ -542,21 +537,15 @@ const resetCardNumbers = () => {
   addCardNumber();
 };
 const print = () => {
-  console.table(jointArray);
-  line1.sort(function (a, b) {
-    return a - b;
-  });
-  line2.sort(function (a, b) {
-    return a - b;
-  });
-  line1.sort(function (a, b) {
-    return a - b;
-  });
+  line1.sort((a, b) => a - b);
+  line2.sort((a, b) => a - b);
+  line1.sort((a, b) => a - b);
+
   drawNumber();
 };
 const getRanking = () => {
-  for (let i = 0; ranking.length < 7; i++) {
-    let goldNugget = Math.floor(Math.random() * 25) + 1;
+  for (let i = 0; ranking.length < 7; i + 1) {
+    const goldNugget = Math.floor(Math.random() * 25) + 1;
     ranking.push(goldNugget);
   }
   ranking.sort((a, b) => b - a);
