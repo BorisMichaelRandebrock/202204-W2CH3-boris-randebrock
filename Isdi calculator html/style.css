@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Space+Mono&display=swap');
+body {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 105px repeat(6, 60px);
+}
+.display {
+  grid-column: span 4;
+  padding: 15px;
+  font-size: 2em;
+  text-align:end;
+  background-color: rgb(0, 0, 20);
+  color: white;
+}
+
+.numbersDisplay {
+  grid-column: span 4;
+  padding: 16px;
+  background-color: rgb(0, 0, 20);
+  text-align: right;
+  color: white;
+  font-size: 2em;
+  text-align:end;
+}
+
+.number {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 0;
+  font-size: 1.5em;
+  background-color: rgb(218, 214, 214);
+}
+.number:hover {
+  background: rgb(187, 186, 186);
+}
+
+.number:active {
+  background: rgb(158, 157, 157);
+}
+
+.long {
+  grid-column: span 2;
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 0;
+  font-size: 1.5em;
+  background-color: rgb(218, 214, 214);
+ }
+ .long:hover {
+  background: rgb(187, 186, 186);
+}
+
+.long:active {
+  background: rgb(158, 157, 157);
+}
+.function {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white; 
+}
+.function:hover {
+  background: rgb(207, 136, 2);
+}
+.function:active {
+  background: rgb(168, 110, 2);
+}
+
+.square {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white; 
+}
+
+.square:active {
+  background: rgb(207, 136, 2);
+}
+.divide {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white;
+}
+
+.divide:active {
+  background: rgb(207, 136, 2);
+}
+.multiply {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white;
+}
+
+.multiply:active {
+  background: rgb(207, 136, 2);
+}
+.substract{
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white;
+}
+
+.substract:active {
+  background: rgb(207, 136, 2);
+}
+.add {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white;
+}
+
+.add:active {
+  background: rgb(207, 136, 2);
+}
+.equal {
+  margin: 0px;
+  border: 1px grey solid;
+  padding: 1px black;
+  font-size: 2em;
+  background-color: orange;
+  color: white;
+}
+
+.equal:active {
+  background: rgb(207, 136, 2);
+}
